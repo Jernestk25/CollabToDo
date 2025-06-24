@@ -67,3 +67,22 @@ export default tseslint.config([
   },
 ])
 ```
+
+# ✅ CollabTodo
+
+Application de gestion de tâches personnelles, stylée et collaborative.
+
+## 🚀 Stack
+
+- React 18 + Vite
+- Firebase Auth & Realtime Database
+- Tailwind CSS (animations)
+- Cypress (tests E2E)
+- Déploiement sur Vercel
+
+## 💡 Installation
+
+```bash
+git clone https://github.com/TON_UTILISATEUR/collabtodo.git
+cd collabtodo
+npm install
