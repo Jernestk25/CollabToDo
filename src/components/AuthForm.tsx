@@ -9,32 +9,40 @@ export default function AuthForm({ onSubmit, type = "login" }: AuthFormProps) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onSubmit({ email, password });
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 p-4 bg-white rounded-xl shadow-md">
-      <h2 className="text-xl font-bold">{type === "signup" ? "Sign Up" : "Sign In"}</h2>
+    <form
+      onSubmit={handleSubmit}
+      className="space-y-4 p-6 bg-white rounded-xl shadow-md max-w-md w-full"
+    >
+      <h2 className="text-xl font-bold text-center">
+        {type === "signup" ? "Create Account" : "Welcome Back"}
+      </h2>
       <input
-        className="w-full p-2 border rounded"
-        placeholder="Email"
         type="email"
+        placeholder="Email"
         value={email}
-        onChange={(e) => setEmail(e.target.value)}
         required
+        onChange={(e) => setEmail(e.target.value)}
+        className="w-full p-3 border rounded"
       />
       <input
-        className="w-full p-2 border rounded"
-        placeholder="Password"
         type="password"
+        placeholder="Password"
         value={password}
-        onChange={(e) => setPassword(e.target.value)}
         required
+        onChange={(e) => setPassword(e.target.value)}
+        className="w-full p-3 border rounded"
       />
-      <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
-        {type === "signup" ? "Create Account" : "Log In"}
+      <button
+        type="submit"
+        className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded w-full"
+      >
+        {type === "signup" ? "Sign Up" : "Login"}
       </button>
     </form>
   );
